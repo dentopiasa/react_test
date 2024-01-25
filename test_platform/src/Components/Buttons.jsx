@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import DisplayInput from "./DisplayFunction";
+import DisplayInput from "./Contact";
 
 export default function Button({text, color, backgroundColor, fontSize}) {
     
