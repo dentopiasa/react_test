@@ -11,6 +11,7 @@ function App() { //state function here defines display value
   const [password , setPassword] = useState("")
 
   const [counter , setCounter] = useState(0)
+  const [poke, setPoke] = useState("")
 
 
   const setNameChange = (value) => {
@@ -33,15 +34,12 @@ function App() { //state function here defines display value
   }, []*/
 
   function jason() {
-    fetch('https://pokeapi.co/api/v2/pokemon/', {mode: 'cors'})
+    fetch('https://pokeapi.co/api/v2/pokemon/bulbasaur', {mode: 'cors'})
     .then(function(response) {
       return response.json();
     })
     .then(function(response) {
-      console.log(response);
-      return (
-        <p></p>
-      )
+      setPoke(response.sprites.front_default)
     }); 
   }
 
@@ -50,6 +48,7 @@ function App() { //state function here defines display value
     <h1>hello user </h1>
     {jason()}
     <h2>this is a test page</h2>
+    <img src={poke}></img>
     <h3>please enter your credentials:</h3>
     <Contact
     nameStateFn={setNameChange}
